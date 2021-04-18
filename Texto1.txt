@@ -1,5 +1,0 @@
-Mi primer archivo de Texto 
-Python en TP2 
-Escrito desde Jupyter
- continuando con ficheros en Python
-Seguimos probando 
