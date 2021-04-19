@@ -1,0 +1,19 @@
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+import requests
+import pandas as pd
+
+url = ('https://en.wikipedia.org/wiki/Python_(programming_language)')
+html = requests.get(url)
+soup = BeautifulSoup(html.content, 'html.parser')
+
+etiquetas=soup.find_all(["h1","h2"])
+
+encabezados=[]
+for i in etiquetas:
+    encabezados.append(i.text)
+encabezados.remove("Contents")
+encabezados.pop(17)
+
+Encabezados=pd.DataFrame({'Encabezados':encabezados})
+print(Encabezados)
